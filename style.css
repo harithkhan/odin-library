@@ -63,3 +63,20 @@ header > a > img {
     height: 4rem;
     width: 4rem;
 }
+
+/* Main */
+
+main {
+    height: calc(100vh - 8rem);
+}
+
+main,
+.library {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 8rem);
+}
+
+.library {
+    background-color: #f0fdfa;
+}
