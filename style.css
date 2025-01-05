@@ -140,7 +140,7 @@ main {
   object-fit: cover;
   object-position: center;
   transform-origin: center;
-  display: block;
+  border-radius: 4px;
 }
 
 .book-title,
