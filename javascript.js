@@ -9,6 +9,9 @@ function Book(title, author, pages, isRead, imgPath) {
     this.info = function() {
         return `${this.title}, by ${this.author}, has ${this.pages} pages, and is ${this.isRead}`
     };
+    this.toggleRead = function() {
+        this.isRead = this.isRead === "read" ? this.isRead = "not read" : this.isRead = "read";
+    };
 };
 
 function addBookToLibrary(bookToAdd) {
@@ -100,9 +103,24 @@ function displayLibrary() {
         bookCard.appendChild(bookAuthor);
         bookCard.appendChild(pageNumber);
         book.isRead === "read" ? bookCard.appendChild(readIcon) : bookCard.appendChild(notReadIcon);
+        readIcon.addEventListener("click", () => {
+            book.toggleRead();
+            displayLibrary();
+        });
+        notReadIcon.addEventListener("click", () => {
+            book.toggleRead();
+            displayLibrary();
+        });
         library.appendChild(bookCard);
     }
 };
 
-displayLibrary();
+displayLibrary(); // Initialise display of books
 
+// Function and event listener to toggle read status
+
+// Function.prototype.toggleRead = function() {
+//     this.isRead === "read" ? this.isRead = "not read" : this.isRead = "read";
+// };
+
+// readIcon.addEventListener()
