@@ -72,20 +72,34 @@ function displayLibrary() {
         readIcon.setAttribute("viewBox", "0 0 24 24");
         readIcon.setAttribute("class", "read-icon");
         let readIconTitle = document.createElementNS("http://www.w3.org/2000/svg", "title");
-        readIconTitle.textContent = "book-open-page-variant-outline";
+        readIconTitle.textContent = "book-plus-outline";
         let readIconPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
         readIconPath.setAttribute(
             "d",
-            "M19 1L14 6V17L19 12.5V1M21 5V18.5C19.9 18.15 18.7 18 17.5 18C15.8 18 13.35 18.65 12 19.5V6C10.55 4.9 8.45 4.5 6.5 4.5C4.55 4.5 2.45 4.9 1 6V20.65C1 20.9 1.25 21.15 1.5 21.15C1.6 21.15 1.65 21.1 1.75 21.1C3.1 20.45 5.05 20 6.5 20C8.45 20 10.55 20.4 12 21.5C13.35 20.65 15.8 20 17.5 20C19.15 20 20.85 20.3 22.25 21.05C22.35 21.1 22.4 21.1 22.5 21.1C22.75 21.1 23 20.85 23 20.6V6C22.4 5.55 21.75 5.25 21 5M10 18.41C8.75 18.09 7.5 18 6.5 18C5.44 18 4.18 18.19 3 18.5V7.13C3.91 6.73 5.14 6.5 6.5 6.5C7.86 6.5 9.09 6.73 10 7.13V18.41Z"
+            "M13.09 20C13.21 20.72 13.46 21.39 13.81 22H6C4.89 22 4 21.11 4 20V4C4 2.9 4.89 2 6 2H18C19.11 2 20 2.9 20 4V13.09C19.67 13.04 19.34 13 19 13C18.66 13 18.33 13.04 18 13.09V4H13V12L10.5 9.75L8 12V4H6V20H13.09M20 18V15H18V18H15V20H18V23H20V20H23V18H20Z"
         );
 
+        let notReadIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        notReadIcon.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+        notReadIcon.setAttribute("viewBox", "0 0 24 24");
+        notReadIcon.setAttribute("class", "not-read-icon");
+        let notReadIconTitle = document.createElementNS("http://www.w3.org/2000/svg", "title");
+        notReadIconTitle.textContent = "book-cancel-outline";
+        let notReadIconPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        notReadIconPath.setAttribute(
+            "d",
+            "M12.18 20C12.36 20.72 12.65 21.39 13.04 22H6C4.89 22 4 21.11 4 20V4C4 2.9 4.89 2 6 2H18C19.11 2 20 2.9 20 4V12.18C19.5 12.07 19 12 18.5 12C18.33 12 18.17 12 18 12.03V4H13V12L10.5 9.75L8 12V4H6V20H12.18M23 18.5C23 21 21 23 18.5 23S14 21 14 18.5 16 14 18.5 14 23 16 23 18.5M20 21.08L15.92 17C15.65 17.42 15.5 17.94 15.5 18.5C15.5 20.16 16.84 21.5 18.5 21.5C19.06 21.5 19.58 21.35 20 21.08M21.5 18.5C21.5 16.84 20.16 15.5 18.5 15.5C17.94 15.5 17.42 15.65 17 15.92L21.08 20C21.35 19.58 21.5 19.06 21.5 18.5Z"
+        );
+        
         readIcon.appendChild(readIconTitle);
         readIcon.appendChild(readIconPath);
+        notReadIcon.appendChild(notReadIconTitle)
+        notReadIcon.appendChild(notReadIconPath);
         bookCard.appendChild(bookImg);
         bookCard.appendChild(bookTitle);
         bookCard.appendChild(bookAuthor);
         bookCard.appendChild(pageNumber);
-        bookCard.appendChild(readIcon);
+        book.isRead === "read" ? bookCard.appendChild(readIcon) : bookCard.appendChild(notReadIcon);
         library.appendChild(bookCard);
     }
 };

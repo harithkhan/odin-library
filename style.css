@@ -161,7 +161,8 @@ main {
   line-height: 1rem;
 }
 
-.read-icon {
+.read-icon,
+.not-read-icon {
   grid-area: 4 / 2 / -1 / -1;
   background-color: white;
   fill: var(--dark);
