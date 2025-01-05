@@ -44,6 +44,12 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
 }
 
+:root {
+    --bg-secondary: #e5e5e5; 
+    --text-light: #0d9488;
+    --text-dark: #0f766e;
+}
+
 /* Header */
 
 header {
@@ -74,7 +80,7 @@ main {
 }
 
 .library {
-    background-color: #e5e5e5;
+    background-color: var(--bg-secondary);
     overflow-y: auto;
     flex-grow:  1;
     padding: 2rem 10rem 2rem 10rem;
@@ -108,7 +114,7 @@ footer {
 
 footer a {
     text-decoration: none;
-    color: #0d9488;
+    color: var(--text-light);
 }
 
 .credit img {
