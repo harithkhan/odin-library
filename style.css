@@ -50,6 +50,7 @@ h1, h2, h3, h4, h5, h6 {
     --bg-secondary: #e5e5e5; 
     --light: #0d9488;
     --dark: #0f766e;
+    --dark-red: #991b1b;
     --font-weight-medium: 500;
     --font-weight-bold: 700;
     --font-weight-very-bold: 900;
@@ -168,6 +169,10 @@ main {
   fill: var(--dark);
   max-width: 2rem;
   height: auto;
+}
+
+.not-read-icon {
+  fill: var(--dark-red);
 }
 
 .read-icon:hover,
