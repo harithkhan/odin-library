@@ -170,6 +170,11 @@ main {
   height: auto;
 }
 
+.read-icon:hover,
+.not-read-icon:hover {
+  cursor: pointer;
+}
+
 .white-filler {
   background-color: white;
   grid-area: 5 / 1 / span 1 / span 1;
