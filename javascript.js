@@ -17,7 +17,7 @@ function addBookToLibrary(bookToAdd) {
 let book1 = new Book("Emma", "Jane Austen", 495, "read");
 let book2 = new Book("Emma", "Pride and Prejudice", 274, "not read");
 let book3 = new Book("Heidi Shamsuddin", "Nusantara, A Sea of Tales", 223, "not read");
-let book4 = new Book("Slaying Dragons", "Kristian Bell", 282, "not read");
+let book4 = new Book("The Psychology of Slaying Dragons", "Kristian Bell", 282, "not read");
 let book5 = new Book("L. Varty & L. H. Yim", "Hong Kong Slang", 115, "not read");
 let book6 = new Book("Levy Rozman", "How To Win At Chess", 361, "read");
 let book7 = new Book("Fyodor Dostoevsky", "Crime and Punishment", 642, "read");
