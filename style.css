@@ -66,13 +66,16 @@ header > a > img {
 
 /* Main */
 
-main,
-.library {
+
+main {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 10rem);
+    min-height: calc(100vh - 10rem);
+    overflow-y: auto;
 }
 
 .library {
-    background-color: #f0fdfa;
+    background-color: #e5e5e5;
+    overflow-y: auto;
+    flex-grow:  1;
 }
