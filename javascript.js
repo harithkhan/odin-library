@@ -20,7 +20,7 @@ function addBookToLibrary(bookToAdd) {
 let book1 = new Book("Emma", "Jane Austen", 495, "read", "img/books/emma.png");
 let book2 = new Book("Emma", "Jane Austen", 274, "not read", "img/books/pride.png");
 let book3 = new Book("Nusantara, A Sea of Tales","Heidi Shamsuddin", 223, "not read", "img/books/nusantara.png");
-let book4 = new Book("Kristian Bell", "The Psychology of Slaying Dragons", 282, "not read", "img/books/dragons.png");
+let book4 = new Book("The Psychology of Slaying Dragons", "Kristian Bell", 282, "not read", "img/books/dragons.png");
 let book5 = new Book("Hong Kong Slang", "L. Varty & L. H. Yim", 115, "not read", "img/books/hkslang.png");
 let book6 = new Book("How To Win At Chess", "Levy Rozman", 361, "read", "img/books/chess.png");
 let book7 = new Book("Crime and Punishment", "Fyodor Dostoevsky", 642, "read", "img/books/crime.png");
