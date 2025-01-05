@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 /* Reset */
 
 *, *::before, *::after {
@@ -48,6 +50,12 @@ h1, h2, h3, h4, h5, h6 {
     --bg-secondary: #e5e5e5; 
     --text-light: #0d9488;
     --text-dark: #0f766e;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+}
+
+body {
+    font-family: 'Roboto', arial, Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Header */
@@ -85,7 +93,7 @@ main {
     flex-grow:  1;
     padding: 2rem 10rem 2rem 10rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     gap: 1rem;
 }
 
