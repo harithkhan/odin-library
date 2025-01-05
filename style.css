@@ -165,6 +165,8 @@ main {
   grid-area: 4 / 2 / -1 / -1;
   background-color: white;
   fill: var(--dark);
+  max-width: 2rem;
+  height: auto;
 }
 
 .white-filler {
