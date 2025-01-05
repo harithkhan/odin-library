@@ -14,6 +14,8 @@ function addBookToLibrary(bookToAdd) {
     myLibrary.push(bookToAdd);
 }
 
+// Add default books to myLibary
+
 let book1 = new Book("Emma", "Jane Austen", 495, "read");
 let book2 = new Book("Emma", "Pride and Prejudice", 274, "not read");
 let book3 = new Book("Heidi Shamsuddin", "Nusantara, A Sea of Tales", 223, "not read");
@@ -42,4 +44,18 @@ addBookToLibrary(book10);
 addBookToLibrary(book11);
 addBookToLibrary(book12);
 console.log(myLibrary);
+
+// Funtion to display library books
+
+const library = document.querySelector(".library");
+function displayLibrary() {
+    library.innerHTML = ""; // Clear existing library
+    for (let book of myLibrary) {
+        const bookCard = document.createElement("div");
+        bookCard.className = "book-card";
+        library.appendChild(bookCard);
+    }
+};
+
+displayLibrary();
 

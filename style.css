@@ -77,4 +77,15 @@ main {
     background-color: #e5e5e5;
     overflow-y: auto;
     flex-grow:  1;
+    padding: 2rem 10rem 2rem 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.book-card {
+    background-color: white;
+    border-radius: 8px;
+    height: 14rem;
+    min-width: 5rem;
 }
