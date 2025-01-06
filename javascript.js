@@ -21,7 +21,7 @@ function addBookToLibrary(bookToAdd) {
 // Add default books to myLibary
 
 let book1 = new Book("Emma", "Jane Austen", 495, "read", "img/books/emma.png");
-let book2 = new Book("Emma", "Jane Austen", 274, "not read", "img/books/pride.png");
+let book2 = new Book("Pride and Prejudice", "Jane Austen", 274, "not read", "img/books/pride.png");
 let book3 = new Book("Nusantara, A Sea of Tales","Heidi Shamsuddin", 223, "not read", "img/books/nusantara.png");
 let book4 = new Book("The Psychology of Slaying Dragons", "Kristian Bell", 282, "not read", "img/books/dragons.png");
 let book5 = new Book("Hong Kong Slang", "L. Varty & L. H. Yim", 115, "not read", "img/books/hkslang.png");
