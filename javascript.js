@@ -182,6 +182,8 @@ bookForm.addEventListener("submit", (event) => {
     );
     addBookToLibrary(newBook);
     displayLibrary();
+    addBookDialog.close();
+    bookForm.reset();
 });
 
 /* Prevent alert when refreshing page */
