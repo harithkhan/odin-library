@@ -165,6 +165,11 @@ function populateDeleteDialog() {
         counter++;
         bookContainer.appendChild(bookNumber)
 
+        const bookTitle = document.createElement("div");
+        bookTitle.textContent = `${book.title}`;
+        bookTitle.classList.add("delete-form-text", "delete-form-title");
+        bookContainer.appendChild(bookTitle);
+
         deleteForm.appendChild(bookContainer);
     };
     

@@ -300,6 +300,10 @@ form button:hover {
   color: var(--light)
 }
 
+.delete-form-title {
+  justify-self: left;
+}
+
 .form-delete-button-container {
   display: flex;
   justify-content: center;
