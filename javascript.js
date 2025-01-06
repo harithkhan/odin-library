@@ -162,4 +162,13 @@ addBookButton.addEventListener("click", () => {
 
 cancelAddDialog.addEventListener("click", () => {
     addBookDialog.close();
-})
+});
+
+/* Prevent alert when refreshing page */
+
+window.onbeforeunload = null;
+document.querySelectorAll("input").forEach(input => {
+    input.addEventListener("input", () => {
+        input.dataset.touched = true;
+    });
+});
