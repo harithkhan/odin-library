@@ -126,7 +126,7 @@ function displayLibrary() {
             }
         };
 
-        readIcon.addEventListener("mouseenter", (e) => showTooltip(e, "This book is read"));
+        readIcon.addEventListener("mouseenter", (e) => showTooltip(e, "This book had been read"));
         readIcon.addEventListener("mouseleave", removeTooltip);
         notReadIcon.addEventListener("mouseenter", (e) => showTooltip(e, "This book has not been read"));
         notReadIcon.addEventListener("mouseleave", removeTooltip);
