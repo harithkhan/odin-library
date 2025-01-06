@@ -270,7 +270,7 @@ form button:hover {
   box-shadow: 0px 0px 4px 0px rgba(80, 80, 80, 0.5);;
   border: none;
   border-radius: 16px;
-  height: 27rem;
+  min-height: 27rem;
   width: 50rem;
   display: flex;
   flex-direction: column;
