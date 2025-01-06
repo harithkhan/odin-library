@@ -200,7 +200,7 @@ main {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 5rem;
+  top: 7rem;
   justify-self: center;
   padding: 2rem;
   gap: 1rem;
@@ -275,7 +275,7 @@ form button:hover {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 5rem;
+  top: 7rem;
   justify-self: center;
   padding: 2rem;
   gap: 1rem;
