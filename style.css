@@ -300,8 +300,40 @@ form button:hover {
   color: var(--light)
 }
 
-.delete-form-title {
+.delete-form-title,
+.delete-form-author {
   justify-self: left;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  padding-right: 0.5rem;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid var(--light);
+  border-radius: 50px;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1rem 1rem var(--light);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+  border-radius: 50px;
 }
 
 .form-delete-button-container {

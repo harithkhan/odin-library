@@ -170,6 +170,18 @@ function populateDeleteDialog() {
         bookTitle.classList.add("delete-form-text", "delete-form-title");
         bookContainer.appendChild(bookTitle);
 
+        const bookAuthor = document.createElement("div");
+        bookAuthor.textContent = `${book.author}`;
+        bookAuthor.classList.add("delete-form-text", "delete-form-author");
+        bookContainer.appendChild(bookAuthor);
+
+        const selectBox = document.createElement("input")
+        selectBox.setAttribute("type", "checkbox");
+        selectBox.setAttribute("id", "delete-book");
+        selectBox.setAttribute("name", "delete-book");
+        selectBox.setAttribute("value", "delete-book");
+        bookContainer.appendChild(selectBox);
+
         deleteForm.appendChild(bookContainer);
     };
     
