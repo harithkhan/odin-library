@@ -14,7 +14,30 @@
             <a class="icon-container" href="#" target="_self" rel="noopener noreferrer"><img src="img/profile-picture-zoom.png" alt="Icon picture of user"></a>
             <div class="header-title">Library</div>
             <dialog class="add-book-dialog">
-                <button type="button" class="cancel-add-dialog">Cancel</button>
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="title">*Title:</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Author">*Author:</label>
+                        <input type="text" id="author" name="author" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pages">*Pages</label>
+                        <input type="number" id="pages" name="pages" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pages">*Read Status</label>
+                        <select id="read-status" name="read-status" required>
+                            <option value="" disabled selected hidden>--</option>
+                            <option value="read">Read</option>
+                            <option value="not read">Not Read</option>
+                        </select>
+                    </div>
+                    <button type="submit" value="default" class="confirm">Add Book</button>
+                    <button type="submit" value="cancel" class="cancel-add-dialog">Cancel</button>
+                </form>
             </dialog>
             <button type="button" class="add-book-button">Add Book</button>
             <button type="button" class="delete-book-button">Delete Book</button>
