@@ -198,6 +198,7 @@ function populateDeleteDialog() {
     const cancelDeleteDialog = document.querySelector(".cancel-delete-dialog");
     cancelDeleteDialog.addEventListener("click", (event) => {
         event.preventDefault();
+        deleteForm.innerHTML = "";
         deleteBookDialog.close();
     });
 
