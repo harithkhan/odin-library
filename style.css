@@ -197,6 +197,7 @@ main {
   border-radius: 16px;
   height: 27rem;
   width: 50rem;
+  min-width: 25rem;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -272,6 +273,7 @@ form button:hover {
   border-radius: 16px;
   min-height: 27rem;
   width: 50rem;
+  min-width: 25rem;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -289,7 +291,13 @@ form button:hover {
 .delete-book-container {
   min-height: 2rem;
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr 1fr;
+  grid-template-columns: 0.5fr 2fr 2fr 1fr;
+}
+
+.delete-form-text {
+  align-self: center;
+  justify-self: center;
+  color: var(--light)
 }
 
 .form-delete-button-container {

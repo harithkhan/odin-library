@@ -142,6 +142,7 @@ const cancelDeleteDialog = document.querySelector(".cancel-delete-dialog");
 
 deleteBookButton.addEventListener("click", () => {
     deleteBookDialog.showModal();
+    populateDeleteDialog();
 });
 
 cancelDeleteDialog.addEventListener("click", (event) => {
@@ -149,13 +150,43 @@ cancelDeleteDialog.addEventListener("click", (event) => {
     deleteBookDialog.close();
 });
 
-/* Populate delete dialog */ 
+/* Function to populate delete dialog */ 
 
-let deleteForm = document.querySelector(".delete-book-form");
-for (let book of myLibrary) {
-    const bookContainer = document.createElement("div");
-    bookContainer.className = "delete-book-container";
-    deleteForm.prepend(bookContainer);
+function populateDeleteDialog() {
+    const deleteForm = document.querySelector(".delete-book-form");
+    let counter = 1;
+    for (let book of myLibrary) {
+        const bookContainer = document.createElement("div");
+        bookContainer.className = "delete-book-container";
+
+        const bookNumber = document.createElement("div");
+        bookNumber.textContent = `${counter})`;
+        bookNumber.className = "delete-form-text";
+        counter++;
+        bookContainer.appendChild(bookNumber)
+
+        deleteForm.appendChild(bookContainer);
+    };
+    
+    const formDeleteButtonContainer = document.createElement("div");
+    formDeleteButtonContainer.className = "form-delete-button-container";
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.setAttribute("type", "submit");
+    deleteButton.setAttribute("value", "default");
+    deleteButton.setAttribute("class", "delete");
+
+    const cancelButton = document.createElement("button");
+    cancelButton.textContent = "Cancel";
+    cancelButton.setAttribute("type", "submit");
+    cancelButton.setAttribute("value", "cancel");
+    cancelButton.setAttribute("formmethod", "dialog");
+    cancelButton.setAttribute("class", "cancel-delete-dialog");
+
+    formDeleteButtonContainer.appendChild(deleteButton);
+    formDeleteButtonContainer.appendChild(cancelButton);
+    deleteForm.appendChild(formDeleteButtonContainer);
 }
 
 /* Add Book functionality */
