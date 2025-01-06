@@ -14,7 +14,7 @@
             <a class="icon-container" href="#" target="_self" rel="noopener noreferrer"><img src="img/profile-picture-zoom.png" alt="Icon picture of user"></a>
             <div class="header-title">Library</div>
             <dialog class="add-book-dialog">
-                <form action="" method="post" autocomplete="off">
+                <form class="book-form">
                     <div class="form-group">
                         <label for="title">*Title:</label>
                         <input type="text" id="title" name="title" required>
@@ -35,7 +35,7 @@
                             <option value="not read">Not Read</option>
                         </select>
                     </div>
-                    <button type="submit" value="default" class="confirm">Add Book</button>
+                    <button type="submit" value="default" class="confirm" formmethod="dialog">Add Book</button>
                     <button type="submit" value="cancel" formmethod="dialog" class="cancel-add-dialog">Cancel</button>
                 </form>
             </dialog>

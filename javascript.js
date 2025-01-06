@@ -150,7 +150,7 @@ function displayLibrary() {
 
 displayLibrary(); // Initialise display of books
 
-/* Add new book functionality */
+/* Open dialogue when Add Book button clicked */
 
 const addBookDialog = document.querySelector(".add-book-dialog");
 const addBookButton = document.querySelector(".add-book-button");
@@ -163,6 +163,25 @@ addBookButton.addEventListener("click", () => {
 cancelAddDialog.addEventListener("click", (event) => {
     event.preventDefault();
     addBookDialog.close();
+});
+
+/* Add Book functionality */
+
+const bookForm = document.querySelector(".book-form");
+bookForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData(bookForm);
+    const formObject = Object.fromEntries(formData.entries());
+    console.log(formObject);
+    let newBook = new Book(
+        formObject.title,
+        formObject.author,
+        formObject.pages,
+        formObject["read-status"],
+        "img/books/book.png"
+    );
+    addBookToLibrary(newBook);
+    displayLibrary();
 });
 
 /* Prevent alert when refreshing page */
