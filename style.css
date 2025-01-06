@@ -291,7 +291,7 @@ form button:hover {
 .delete-book-container {
   min-height: 2rem;
   display: grid;
-  grid-template-columns: 0.5fr 2fr 2fr 1fr;
+  grid-template-columns: 0.5fr 4fr 1fr;
 }
 
 .delete-form-text {
@@ -300,8 +300,7 @@ form button:hover {
   color: var(--light)
 }
 
-.delete-form-title,
-.delete-form-author {
+.delete-form-title {
   justify-self: left;
 }
 

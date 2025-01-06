@@ -166,14 +166,9 @@ function populateDeleteDialog() {
         bookContainer.appendChild(bookNumber)
 
         const bookTitle = document.createElement("div");
-        bookTitle.textContent = `${book.title}`;
+        bookTitle.textContent = `${book.title}, by ${book.author}`;
         bookTitle.classList.add("delete-form-text", "delete-form-title");
         bookContainer.appendChild(bookTitle);
-
-        const bookAuthor = document.createElement("div");
-        bookAuthor.textContent = `${book.author}`;
-        bookAuthor.classList.add("delete-form-text", "delete-form-author");
-        bookContainer.appendChild(bookAuthor);
 
         const selectBox = document.createElement("input")
         selectBox.setAttribute("type", "checkbox");
