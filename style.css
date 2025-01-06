@@ -263,6 +263,24 @@ form button:hover {
   background-color: var(--very-light);
 }
 
+/* Delete book dialog */
+
+.delete-book-dialog {
+  background-color: white;
+  box-shadow: 0px 0px 4px 0px rgba(80, 80, 80, 0.5);;
+  border: none;
+  border-radius: 16px;
+  height: 27rem;
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5rem;
+  justify-self: center;
+  padding: 2rem;
+  gap: 1rem;
+}
+
 /* Footer */
 
 footer {

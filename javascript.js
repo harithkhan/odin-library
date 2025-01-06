@@ -119,7 +119,7 @@ function displayLibrary() {
 
 displayLibrary(); // Initialise display of books
 
-/* Open dialogue when Add Book button clicked */
+/* Open dialog when Add Book button clicked */
 
 const addBookDialog = document.querySelector(".add-book-dialog");
 const addBookButton = document.querySelector(".add-book-button");
@@ -132,6 +132,21 @@ addBookButton.addEventListener("click", () => {
 cancelAddDialog.addEventListener("click", (event) => {
     event.preventDefault();
     addBookDialog.close();
+});
+
+/* Open dialog when Delete Book button clicked */
+
+const deleteBookDialog = document.querySelector(".delete-book-dialog");
+const deleteBookButton = document.querySelector(".delete-book-button");
+const cancelDeleteDialog = document.querySelector(".cancel-delete-dialog");
+
+deleteBookButton.addEventListener("click", () => {
+    deleteBookDialog.showModal();
+});
+
+cancelDeleteDialog.addEventListener("click", (event) => {
+    event.preventDefault();
+    deleteBookDialog.close();
 });
 
 /* Add Book functionality */
