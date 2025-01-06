@@ -149,6 +149,15 @@ cancelDeleteDialog.addEventListener("click", (event) => {
     deleteBookDialog.close();
 });
 
+/* Populate delete dialog */ 
+
+let deleteForm = document.querySelector(".delete-book-form");
+for (let book of myLibrary) {
+    const bookContainer = document.createElement("div");
+    bookContainer.className = "delete-book-container";
+    deleteForm.prepend(bookContainer);
+}
+
 /* Add Book functionality */
 
 const bookForm = document.querySelector(".book-form");

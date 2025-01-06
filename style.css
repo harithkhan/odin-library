@@ -281,6 +281,23 @@ form button:hover {
   gap: 1rem;
 }
 
+.delete-book-form {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+.delete-book-container {
+  min-height: 2rem;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 1fr;
+}
+
+.form-delete-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
 /* Footer */
 
 footer {
