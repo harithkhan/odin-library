@@ -202,7 +202,7 @@ function populateDeleteDialog() {
         deleteBookDialog.close();
     });
 
-}
+};
 
 // Add Book functionality 
 
