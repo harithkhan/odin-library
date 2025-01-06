@@ -272,7 +272,7 @@ form button:hover {
   border: none;
   border-radius: 16px;
   min-height: 27rem;
-  width: 50rem;
+  width: 36rem;
   min-width: 25rem;
   display: flex;
   flex-direction: column;
@@ -291,7 +291,7 @@ form button:hover {
 .delete-book-container {
   min-height: 2rem;
   display: grid;
-  grid-template-columns: 0.5fr 4fr 1fr;
+  grid-template-columns: 0.5fr 4fr 0.5fr;
 }
 
 .delete-form-text {
@@ -309,7 +309,7 @@ input[type="checkbox"] {
   appearance: none;
   background-color: #fff;
   margin: 0;
-  padding-right: 0.55rem;
+  /* padding-right: 0.5rem; */
   font: inherit;
   color: currentColor;
   width: 1.15em;
