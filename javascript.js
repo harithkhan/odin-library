@@ -119,7 +119,7 @@ function displayLibrary() {
 
 displayLibrary(); // Initialise display of books
 
-/* Open dialog when Add Book button clicked */
+// Open dialog when Add Book button clicked 
 
 const addBookDialog = document.querySelector(".add-book-dialog");
 const addBookButton = document.querySelector(".add-book-button");
@@ -134,23 +134,17 @@ cancelAddDialog.addEventListener("click", (event) => {
     addBookDialog.close();
 });
 
-/* Open dialog when Delete Book button clicked */
+// Open dialog when Delete Book button clicked 
 
 const deleteBookDialog = document.querySelector(".delete-book-dialog");
 const deleteBookButton = document.querySelector(".delete-book-button");
-const cancelDeleteDialog = document.querySelector(".cancel-delete-dialog");
 
 deleteBookButton.addEventListener("click", () => {
     deleteBookDialog.showModal();
     populateDeleteDialog();
 });
 
-cancelDeleteDialog.addEventListener("click", (event) => {
-    event.preventDefault();
-    deleteBookDialog.close();
-});
-
-/* Function to populate delete dialog */ 
+// Function to populate delete dialog
 
 function populateDeleteDialog() {
     const deleteForm = document.querySelector(".delete-book-form");
@@ -199,9 +193,17 @@ function populateDeleteDialog() {
     formDeleteButtonContainer.appendChild(deleteButton);
     formDeleteButtonContainer.appendChild(cancelButton);
     deleteForm.appendChild(formDeleteButtonContainer);
+
+    // Close delete dialog when cancel button clicked 
+    const cancelDeleteDialog = document.querySelector(".cancel-delete-dialog");
+    cancelDeleteDialog.addEventListener("click", (event) => {
+        event.preventDefault();
+        deleteBookDialog.close();
+    });
+
 }
 
-/* Add Book functionality */
+// Add Book functionality 
 
 const bookForm = document.querySelector(".book-form");
 bookForm.addEventListener("submit", (event) => {
@@ -222,7 +224,7 @@ bookForm.addEventListener("submit", (event) => {
     bookForm.reset();
 });
 
-/* Prevent alert when refreshing page */
+// Prevent alert when refreshing page
 
 window.onbeforeunload = null;
 document.querySelectorAll("input").forEach(input => {
