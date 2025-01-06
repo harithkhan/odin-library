@@ -53,6 +53,8 @@ console.log(myLibrary);
 
 const library = document.querySelector(".library");
 function displayLibrary() {
+    const existingTooltips = document.querySelectorAll(".tooltip");
+    existingTooltips.forEach((tooltip) => tooltip.remove()); // Remove any existin tooltip in the DOM
     library.innerHTML = ""; // Clear existing library
     for (let book of myLibrary) {
         let bookCard = document.createElement("div");
@@ -98,6 +100,37 @@ function displayLibrary() {
         readIcon.appendChild(readIconPath);
         notReadIcon.appendChild(notReadIconTitle)
         notReadIcon.appendChild(notReadIconPath);
+
+        // Tooltip Logic
+        const showTooltip = (e, message) => {
+            const tooltip = document.createElement("div");
+            tooltip.className = "tooltip";
+            tooltip.textContent = message;
+            tooltip.style.position = "absolute";
+            tooltip.style.backgroundColor = "#fff";
+            tooltip.style.color = "#333";
+            tooltip.style.border = "1px solid #ddd";
+            tooltip.style.borderRadius = "4px";
+            tooltip.style.padding = "4px";
+            tooltip.style.fontSize = "0.8rem";
+            tooltip.style.top = `${e.pageY + 10}px`;
+            tooltip.style.left = `${e.pageX + 10}px`;
+            document.body.appendChild(tooltip);
+            e.target.tooltip = tooltip;
+        };
+
+        const removeTooltip = (e) => {
+            if (e.target.tooltip) {
+                document.body.removeChild(e.target.tooltip);
+                e.target.tooltip = null;
+            }
+        };
+
+        readIcon.addEventListener("mouseenter", (e) => showTooltip(e, "This book is read"));
+        readIcon.addEventListener("mouseleave", removeTooltip);
+        notReadIcon.addEventListener("mouseenter", (e) => showTooltip(e, "This book has not been read"));
+        notReadIcon.addEventListener("mouseleave", removeTooltip);
+
         bookCard.appendChild(bookImg);
         bookCard.appendChild(bookTitle);
         bookCard.appendChild(bookAuthor);
@@ -112,15 +145,9 @@ function displayLibrary() {
             displayLibrary();
         });
         library.appendChild(bookCard);
+
+        
     }
 };
 
 displayLibrary(); // Initialise display of books
-
-// Function and event listener to toggle read status
-
-// Function.prototype.toggleRead = function() {
-//     this.isRead === "read" ? this.isRead = "not read" : this.isRead = "read";
-// };
-
-// readIcon.addEventListener()
