@@ -321,6 +321,11 @@ input[type="checkbox"] {
   align-self: center;
   margin-top: 0.2rem;
   cursor: pointer;
+  transition: border 0.3s ease;
+}
+
+input[type="checkbox"]:hover {
+  border: 0.15em solid var(--dark);
 }
 
 input[type="checkbox"]::before {
