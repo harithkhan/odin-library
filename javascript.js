@@ -145,9 +145,21 @@ function displayLibrary() {
             displayLibrary();
         });
         library.appendChild(bookCard);
-
-        
     }
 };
 
 displayLibrary(); // Initialise display of books
+
+/* Add new book functionality */
+
+const addBookDialog = document.querySelector(".add-book-dialog");
+const addBookButton = document.querySelector(".add-book-button");
+const cancelAddDialog = document.querySelector(".cancel-add-dialog")
+
+addBookButton.addEventListener("click", () => {
+    addBookDialog.showModal();
+});
+
+cancelAddDialog.addEventListener("click", () => {
+    addBookDialog.close();
+})

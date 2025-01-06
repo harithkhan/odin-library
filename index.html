@@ -13,11 +13,15 @@
         <header>
             <a class="icon-container" href="#" target="_self" rel="noopener noreferrer"><img src="img/profile-picture-zoom.png" alt="Icon picture of user"></a>
             <div class="header-title">Library</div>
-            <button type="button">Add Book</button>
-            <button type="button">Delete Book</button>
+            <dialog class="add-book-dialog">
+                <button type="button" class="cancel-add-dialog">Cancel</button>
+            </dialog>
+            <button type="button" class="add-book-button">Add Book</button>
+            <button type="button" class="delete-book-button">Delete Book</button>
         </header>
         <main>
-            <div class="library"></div>
+            <div class="library">
+            </div>
         </main>
         <footer>
             <div class="credit">Created by<a href="https://github.com/harithkhan">Harith Khan</a><img src="img/github-icon.png"></div>
