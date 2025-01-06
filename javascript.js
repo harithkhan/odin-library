@@ -155,6 +155,12 @@ let deleteForm = document.querySelector(".delete-book-form");
 for (let book of myLibrary) {
     const bookContainer = document.createElement("div");
     bookContainer.className = "delete-book-container";
+
+    const bookIcon = document.createElement("img");
+    bookIcon.setAttribute("src", `${book.imgPath}`);
+    bookIcon.setAttribute("class", "delete-book-icon");
+    bookContainer.appendChild(bookIcon);
+    
     deleteForm.prepend(bookContainer);
 }
 

@@ -287,9 +287,17 @@ form button:hover {
 }
 
 .delete-book-container {
-  min-height: 2rem;
+  height: 6rem;
   display: grid;
   grid-template-columns: 2fr 2fr 2fr 1fr;
+}
+
+.delete-book-icon {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: top;
 }
 
 .form-delete-button-container {
