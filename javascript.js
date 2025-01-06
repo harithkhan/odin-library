@@ -160,7 +160,8 @@ addBookButton.addEventListener("click", () => {
     addBookDialog.showModal();
 });
 
-cancelAddDialog.addEventListener("click", () => {
+cancelAddDialog.addEventListener("click", (event) => {
+    event.preventDefault();
     addBookDialog.close();
 });
 
