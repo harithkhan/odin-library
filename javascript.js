@@ -156,7 +156,6 @@ function populateDeleteDialog() {
         const bookNumber = document.createElement("div");
         bookNumber.textContent = `${counter})`;
         bookNumber.className = "delete-form-text";
-        counter++;
         bookContainer.appendChild(bookNumber)
 
         const bookTitle = document.createElement("div");
@@ -166,12 +165,13 @@ function populateDeleteDialog() {
 
         const selectBox = document.createElement("input")
         selectBox.setAttribute("type", "checkbox");
-        selectBox.setAttribute("id", "delete-book");
+        selectBox.setAttribute("id", `delete-book-${counter}`);
         selectBox.setAttribute("name", "delete-book");
-        selectBox.setAttribute("value", "delete-book");
+        selectBox.setAttribute("value", `${book.title}`);
         bookContainer.appendChild(selectBox);
 
         deleteForm.appendChild(bookContainer);
+        counter++;
     };
     
     const formDeleteButtonContainer = document.createElement("div");
@@ -205,7 +205,6 @@ function populateDeleteDialog() {
 };
 
 // Add Book functionality 
-
 const bookForm = document.querySelector(".book-form");
 bookForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -225,8 +224,30 @@ bookForm.addEventListener("submit", (event) => {
     bookForm.reset();
 });
 
-// Prevent alert when refreshing page
+// Delete Book functionality
+const deleteForm = document.querySelector(".delete-book-form");
+deleteForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
+    const formData = new FormData(deleteForm);
+    const selectedBooks = formData.getAll("delete-book");
+    console.log(selectedBooks);
+
+    for (let deleteItem of selectedBooks) {
+        for (let book of myLibrary) {
+            if (deleteItem === book.title) {
+                myLibrary.splice(myLibrary.findIndex(book => book.title === deleteItem), 1);
+            };
+        };
+    };
+
+    deleteForm.innerHTML = "";
+    displayLibrary();
+    deleteBookDialog.close();
+});
+
+
+// Prevent alert when refreshing page
 window.onbeforeunload = null;
 document.querySelectorAll("input").forEach(input => {
     input.addEventListener("input", () => {
