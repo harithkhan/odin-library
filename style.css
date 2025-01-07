@@ -115,7 +115,7 @@ main {
   flex-direction: column;
   min-height: calc(100vh - 10rem);
   overflow-y: auto;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2); */
 }
 
 .library {
@@ -288,7 +288,7 @@ form button:hover {
 .delete-book-dialog {
   display: none;
   background-color: white;
-  box-shadow: 0px 0px 4px 0px rgba(80, 80, 80, 0.5);;
+  box-shadow: 0px 0px 4px 0px rgba(80, 80, 80, 0.5);
   border: none;
   border-radius: 16px;
   min-height: 27rem;
@@ -381,6 +381,8 @@ footer {
   align-items: center;
   justify-items: center;
   padding: 1rem;
+  box-shadow: 0px -0.25rem 0.25rem rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
 
 .credit {
