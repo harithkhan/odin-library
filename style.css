@@ -64,76 +64,76 @@ body {
 /* Header */
 
 header {
-    position: sticky;
-    height: 5rem;
-    background-color: white;
-    display: grid;
-    grid-template-columns: 4rem 1fr 9rem 9rem;
-    padding: 1rem 2rem;
+  position: sticky;
+  height: 5rem;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 4rem 1fr 9rem 9rem;
+  padding: 1rem 2rem;
 }
 
 .icon-container {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 header > a > img {
-    border-radius: 50px;
-    height: 3rem;
-    width: 3rem;
-    object-fit: cover;
-    object-position: center;
+  border-radius: 50px;
+  height: 3rem;
+  width: 3rem;
+  object-fit: cover;
+  object-position: center;
 }
 
 .header-title {
-    font-size: 2rem;
-    font-weight: var(--font-weight-very-bold);
-    color: var(--dark)
+  font-size: 2rem;
+  font-weight: var(--font-weight-very-bold);
+  color: var(--dark)
 }
 
 header > button {
-    color: white;
-    background-color: var(--dark);
-    border-radius: 16px;
-    margin: 0 0.5rem;
-    border: none;
-    transition: background-color 0.3s ease;
-    font-weight: var(--font-weight-medium);
-    cursor: pointer;
+  color: white;
+  background-color: var(--dark);
+  border-radius: 16px;
+  margin: 0 0.5rem;
+  border: none;
+  transition: background-color 0.3s ease;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
 }
 
 header > button:hover {
-    background-color: var(--very-light);
+  background-color: var(--very-light);
 }
 
 /* Main */
 
 main {
-    display: flex;
-    flex-direction: column;
-    min-height: calc(100vh - 10rem);
-    overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 10rem);
+  overflow-y: auto;
 }
 
 .library {
-    background-color: var(--bg-secondary);
-    overflow-y: auto;
-    flex-grow:  1;
-    padding: 2rem 10rem 2rem 10rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    gap: 1rem;
-    z-index: 2;
+  background-color: var(--bg-secondary);
+  overflow-y: auto;
+  flex-grow:  1;
+  padding: 2rem 10rem 2rem 10rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
+  z-index: 2;
 }
 
 .book-card {
-    background-color: white;
-    border-radius: 12px;
-    height: 16rem;
-    min-width: 5rem;
-    display: grid;
-    grid-template: 9fr 1fr 1fr 1fr 1fr / 4fr 1fr;
-    overflow: hidden;
-    padding: 0.5rem;
+  background-color: white;
+  border-radius: 12px;
+  height: 16rem;
+  min-width: 5rem;
+  display: grid;
+  grid-template: 9fr 1fr 1fr 1fr 1fr / 4fr 1fr;
+  overflow: hidden;
+  padding: 0.5rem;
 }
 
 .book-icon {
