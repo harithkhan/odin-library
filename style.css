@@ -134,6 +134,7 @@ main {
   border-radius: 12px;
   height: 16rem;
   min-width: 5rem;
+  max-width: 12rem;
   display: grid;
   grid-template: 9fr 1fr 1fr 1fr 1fr / 4fr 1fr;
   overflow: hidden;
