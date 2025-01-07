@@ -243,10 +243,14 @@ form select {
   border-radius: 8px;
   border: 1px var(--light) solid;
   padding-left: 0.5rem;
-  transition: border 0.3s ease;
 }
 
 input:focus, select:focus {
+  border: 2px var(--dark) solid;
+  outline: none;
+}
+
+input:hover, select:hover {
   border: 2px var(--dark) solid;
   outline: none;
 }
