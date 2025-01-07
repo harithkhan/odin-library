@@ -236,7 +236,7 @@ deleteForm.addEventListener("submit", (event) => {
     for (let deleteItem of selectedBooks) {
         for (let book of myLibrary) {
             if (deleteItem === book.title) {
-                myLibrary.splice(myLibrary.findIndex(book => book.title === deleteItem), 1);
+                myLibrary.splice(myLibrary.indexOf(book), 1);
             };
         };
     };
