@@ -10,7 +10,7 @@ function Book(title, author, pages, isRead, imgPath) {
         return `${this.title}, by ${this.author}, has ${this.pages} pages, and is ${this.isRead}`
     };
     this.toggleRead = function() {
-        this.isRead = this.isRead === "read" ? this.isRead = "not read" : this.isRead = "read";
+        this.isRead === "read" ? this.isRead = "not read" : this.isRead = "read";
     };
 };
 
