@@ -14,12 +14,7 @@ function Book(title, author, pages, isRead, imgPath) {
     };
 };
 
-function addBookToLibrary(bookToAdd) {
-    myLibrary.push(bookToAdd);
-}
-
 // Add default books to myLibary
-
 let book1 = new Book("Emma", "Jane Austen", 495, "read", "img/books/emma.png");
 let book2 = new Book("Pride and Prejudice", "Jane Austen", 274, "not read", "img/books/pride.png");
 let book3 = new Book("Nusantara, A Sea of Tales","Heidi Shamsuddin", 223, "not read", "img/books/nusantara.png");
@@ -34,7 +29,9 @@ let book11 = new Book("$100m Leads", "Alex Hormozi", 398, "read", "img/books/100
 let book12 = new Book("Tufti The Priestess", "Vadim Zealand", 167, "read", "img/books/tufti.png");
 
 // Add default display books
-
+function addBookToLibrary(bookToAdd) {
+    myLibrary.push(bookToAdd);
+};
 addBookToLibrary(book1);
 addBookToLibrary(book2);
 addBookToLibrary(book3);
@@ -50,22 +47,27 @@ addBookToLibrary(book12);
 console.log(myLibrary);
 
 // Funtion to display library books
-
 const library = document.querySelector(".library");
 function displayLibrary() {
     library.innerHTML = ""; // Clear existing library
     for (let book of myLibrary) {
+         
+        // Create elements in book card
         let bookCard = document.createElement("div");
         bookCard.className = "book-card";
+
         let bookImg = document.createElement("img");
         bookImg.setAttribute("src", `${book.imgPath}`);
         bookImg.setAttribute("class", "book-icon");
+
         let bookTitle = document.createElement("div");
         bookTitle.className = "book-title";
         bookTitle.textContent = `${book.title}`;
+
         let bookAuthor = document.createElement("div");
         bookAuthor.className = "book-author";
         bookAuthor.textContent = `${book.author}`;
+
         let pageNumber = document.createElement("div");
         pageNumber.className = "page-number";
         pageNumber.textContent = `${book.pages} pages`;
@@ -74,8 +76,10 @@ function displayLibrary() {
         readIcon.setAttribute("xmlns", "http://www.w3.org/2000/svg");
         readIcon.setAttribute("viewBox", "0 0 24 24");
         readIcon.setAttribute("class", "read-icon");
+
         let readIconTitle = document.createElementNS("http://www.w3.org/2000/svg", "title");
         readIconTitle.textContent = "book-plus-outline";
+
         let readIconPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
         readIconPath.setAttribute(
             "d",
@@ -86,14 +90,17 @@ function displayLibrary() {
         notReadIcon.setAttribute("xmlns", "http://www.w3.org/2000/svg");
         notReadIcon.setAttribute("viewBox", "0 0 24 24");
         notReadIcon.setAttribute("class", "not-read-icon");
+
         let notReadIconTitle = document.createElementNS("http://www.w3.org/2000/svg", "title");
         notReadIconTitle.textContent = "book-cancel-outline";
+
         let notReadIconPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
         notReadIconPath.setAttribute(
             "d",
             "M12.18 20C12.36 20.72 12.65 21.39 13.04 22H6C4.89 22 4 21.11 4 20V4C4 2.9 4.89 2 6 2H18C19.11 2 20 2.9 20 4V12.18C19.5 12.07 19 12 18.5 12C18.33 12 18.17 12 18 12.03V4H13V12L10.5 9.75L8 12V4H6V20H12.18M23 18.5C23 21 21 23 18.5 23S14 21 14 18.5 16 14 18.5 14 23 16 23 18.5M20 21.08L15.92 17C15.65 17.42 15.5 17.94 15.5 18.5C15.5 20.16 16.84 21.5 18.5 21.5C19.06 21.5 19.58 21.35 20 21.08M21.5 18.5C21.5 16.84 20.16 15.5 18.5 15.5C17.94 15.5 17.42 15.65 17 15.92L21.08 20C21.35 19.58 21.5 19.06 21.5 18.5Z"
         );
         
+        // Append relevant elements to read icons
         readIcon.appendChild(readIconTitle);
         readIcon.appendChild(readIconPath);
         notReadIcon.appendChild(notReadIconTitle)
@@ -114,16 +121,15 @@ function displayLibrary() {
             displayLibrary();
         });
         library.appendChild(bookCard);
-    }
+    };
 };
 
 displayLibrary(); // Initialise display of books
 
 // Open dialog when Add Book button clicked 
-
 const addBookDialog = document.querySelector(".add-book-dialog");
 const addBookButton = document.querySelector(".add-book-button");
-const cancelAddDialog = document.querySelector(".cancel-add-dialog")
+const cancelAddDialog = document.querySelector(".cancel-add-dialog");
 
 addBookButton.addEventListener("click", () => {
     addBookDialog.showModal();
@@ -135,7 +141,6 @@ cancelAddDialog.addEventListener("click", (event) => {
 });
 
 // Open dialog when Delete Book button clicked 
-
 const deleteBookDialog = document.querySelector(".delete-book-dialog");
 const deleteBookButton = document.querySelector(".delete-book-button");
 
@@ -145,11 +150,12 @@ deleteBookButton.addEventListener("click", () => {
 });
 
 // Function to populate delete dialog
-
 function populateDeleteDialog() {
     const deleteForm = document.querySelector(".delete-book-form");
     let counter = 1;
     for (let book of myLibrary) {
+
+        // Create dialog elements
         const bookContainer = document.createElement("div");
         bookContainer.className = "delete-book-container";
 
@@ -174,6 +180,7 @@ function populateDeleteDialog() {
         counter++;
     };
     
+    // Create delete dialog button elements
     const formDeleteButtonContainer = document.createElement("div");
     formDeleteButtonContainer.className = "form-delete-button-container";
 
@@ -204,7 +211,7 @@ function populateDeleteDialog() {
 
 };
 
-// Add Book functionality 
+// Add-Book functionality 
 const bookForm = document.querySelector(".book-form");
 bookForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -224,7 +231,7 @@ bookForm.addEventListener("submit", (event) => {
     bookForm.reset();
 });
 
-// Delete Book functionality
+// Delete-Book functionality
 const deleteForm = document.querySelector(".delete-book-form");
 deleteForm.addEventListener("submit", (event) => {
     event.preventDefault();
