@@ -1,15 +1,17 @@
 const myLibrary = [];
 
-function Book(title, author, pages, isRead, imgPath) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = isRead;
-    this.imgPath = imgPath;
-    this.info = function() {
+class Book {
+    constructor(title, author, pages, isRead, imgPath) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
+        this.imgPath = imgPath;
+    };
+    info() {
         return `${this.title}, by ${this.author}, has ${this.pages} pages, and is ${this.isRead}`
     };
-    this.toggleRead = function() {
+    toggleRead() {
         this.isRead === "read" ? this.isRead = "not read" : this.isRead = "read";
     };
 };
