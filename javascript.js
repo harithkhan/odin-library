@@ -252,6 +252,25 @@ function showReadError() {
     }
 }
 
+bookForm.addEventListener("input", (event) => {
+    if (titleInput.validity.valid) {
+        titleError.className = "error";
+        titleError.textContent = "";
+    }
+    if (authorInput.validity.valid) {
+        authorError.className = "error";
+        authorError.textContent = "";
+    }
+    if (pagesInput.validity.valid) {
+        pagesError.className = "error";
+        pagesError.textContent = "";
+    }
+    if (readInput.validity.valid) {
+        readError.className = "error";
+        readError.textContent = "";
+    }
+})
+
 bookForm.addEventListener("submit", (event) => {
     if (!titleInput.validity.valid) {
         showTitleError();
