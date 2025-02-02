@@ -219,6 +219,10 @@ const titleInput = document.getElementById("title");
 const titleError = document.querySelector("#title + span.error");
 const authorInput = document.getElementById("author");
 const authorError = document.querySelector("#author + span.error");
+const pagesInput = document.getElementById("pages");
+const pagesError = document.querySelector("#pages + span.error");
+const readInput = document.getElementById("read-status");
+const readError = document.querySelector("#read-status + span.error");
 
 function showTitleError() {
     if (titleInput.validity.valueMissing) {
@@ -234,12 +238,26 @@ function showAuthorError() {
     }
 }
 
+function showPagesError() {
+    if (pagesInput.validity.valueMissing) {
+        pagesError.textContent = "You must enter number of pages";
+        pagesError.className = "error active";
+    }
+}
+
+function showReadError() {
+    if (readInput.validity.valueMissing) {}
+}
+
 bookForm.addEventListener("submit", (event) => {
     if (!titleInput.validity.valid) {
         showTitleError();
         event.preventDefault();
     } else if (!authorInput.validity.valid) {
         showAuthorError();
+        event.preventDefault();
+    } else if (!pagesInput.validity.valid) {
+        showPagesError();
         event.preventDefault();
     } else {
         const formData = new FormData(bookForm);
