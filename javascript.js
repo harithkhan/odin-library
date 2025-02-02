@@ -246,7 +246,10 @@ function showPagesError() {
 }
 
 function showReadError() {
-    if (readInput.validity.valueMissing) {}
+    if (readInput.validity.valueMissing) {
+        readError.textContent = "You must enter read status";
+        readError.className = "error active";
+    }
 }
 
 bookForm.addEventListener("submit", (event) => {
@@ -258,6 +261,9 @@ bookForm.addEventListener("submit", (event) => {
         event.preventDefault();
     } else if (!pagesInput.validity.valid) {
         showPagesError();
+        event.preventDefault();
+    } else if (!readInput.validity.valid) {
+        showReadError();
         event.preventDefault();
     } else {
         const formData = new FormData(bookForm);
