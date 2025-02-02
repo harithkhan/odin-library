@@ -217,6 +217,8 @@ function populateDeleteDialog() {
 const bookForm = document.querySelector(".book-form");
 const titleInput = document.getElementById("title");
 const titleError = document.querySelector("#title + span.error");
+const authorInput = document.getElementById("author");
+const authorError = document.querySelector("#author + span.error");
 
 function showTitleError() {
     if (titleInput.validity.valueMissing) {
@@ -225,9 +227,19 @@ function showTitleError() {
     titleError.classList.add("active");
 }
 
+function showAuthorError() {
+    if (authorInput.validity.valueMissing) {
+        authorError.textContent = "You must enter an author name";
+        authorError.className = "error active";
+    }
+}
+
 bookForm.addEventListener("submit", (event) => {
     if (!titleInput.validity.valid) {
         showTitleError();
+        event.preventDefault();
+    } else if (!authorInput.validity.valid) {
+        showAuthorError();
         event.preventDefault();
     } else {
         const formData = new FormData(bookForm);
