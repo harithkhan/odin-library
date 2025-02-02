@@ -215,22 +215,36 @@ function populateDeleteDialog() {
 
 // Add-Book functionality 
 const bookForm = document.querySelector(".book-form");
+const titleInput = document.getElementById("title");
+const titleError = document.querySelector("#title + span.error");
+
+function showTitleError() {
+    if (titleInput.validity.valueMissing) {
+        titleError.textContent = "You must enter a title";
+    }
+    titleError.classList.add("active");
+}
+
 bookForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const formData = new FormData(bookForm);
-    const formObject = Object.fromEntries(formData.entries());
-    console.log(formObject);
-    let newBook = new Book(
-        formObject.title,
-        formObject.author,
-        formObject.pages,
-        formObject["read-status"],
-        "img/books/book.png"
-    );
-    addBookToLibrary(newBook);
-    displayLibrary();
-    addBookDialog.close();
-    bookForm.reset();
+    if (!titleInput.validity.valid) {
+        showTitleError();
+        event.preventDefault();
+    } else {
+        const formData = new FormData(bookForm);
+        const formObject = Object.fromEntries(formData.entries());
+        console.log(formObject);
+        let newBook = new Book(
+            formObject.title,
+            formObject.author,
+            formObject.pages,
+            formObject["read-status"],
+            "img/books/book.png"
+        );
+        addBookToLibrary(newBook);
+        displayLibrary();
+        addBookDialog.close();
+        bookForm.reset();
+    }
 });
 
 // Delete-Book functionality
@@ -263,3 +277,22 @@ document.querySelectorAll("input").forEach(input => {
         input.dataset.touched = true;
     });
 });
+
+// Form validations
+// const form = document.querySelector(".book-form");
+// const titleInput = document.getElementById("title");
+// const titleError = document.querySelector("#title + span.error");
+
+// function showTitleError() {
+//     if (titleInput.validity.valueMissing) {
+//         titleError.textContent = "You must enter a title";
+//     }
+//     titleError.classList.add("active");
+// }
+
+// form.addEventListener("submit", (event) => {
+//     if (!titleInput.validity.valid) {
+//         showTitleError();
+//         event.preventDefault();
+//     }
+// })

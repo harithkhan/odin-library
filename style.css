@@ -235,6 +235,7 @@ main {
 .form-group {
   display: grid;
   grid-template-columns: 1fr 4fr;
+  grid-auto-rows: max(1fr);
 }
 
 .form-group label {
@@ -283,31 +284,21 @@ form button:hover {
   background-color: var(--very-light);
 }
 
-/* invalid fields */
-input:invalid {
-  border-color: #900;
-  background-color: #fdd;
-}
-
-input:focus:invalid {
-  outline: none;
-}
-
 /* error message styles */
 .error {
-  width: 100%;
+  width: 99%;
   padding: 0;
-
   font-size: 80%;
   color: white;
   background-color: #900;
-  border-radius: 0 0 5px 5px;
-
+  border-radius: 5px 5px 5px 5px;
   box-sizing: border-box;
+  grid-column: 2 / -1;
 }
 
 .error.active {
   padding: 0.3em;
+  left: 7rem;
 }
 
 /* Delete book dialog */
